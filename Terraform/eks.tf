@@ -31,7 +31,7 @@ module "eks" {
         max_size = 3
         desired_size = 2
 
-        capacity_type = "SPOT"
+        
 
         disk_size = 35
         use_custom_launch_template = false 
