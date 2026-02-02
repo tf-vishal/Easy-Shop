@@ -78,20 +78,9 @@ Thumbs.db
 *.mongodb
 mongodb/
 
-terraform/.terraform/*
-terraform/terra-key.pub
-terraform/terra-key
-terraform/terraform.tfstate*
-terraform/.terraform.lock.hcl
-terraform/.terraform/modules/*
-
-.terraform.tfstate.lock.info
-terraform/.terraform
+.terraform/
 .terraform.lock.hcl
-.terraform
-terraform.tfstate
-terraform.tfstate.backup
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
-terraform-key.pub
-terraform-key
+*.tfstate*
+
+easy-shop-terraform
+*pub
