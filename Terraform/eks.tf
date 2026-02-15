@@ -22,7 +22,7 @@ module "eks" {
   enable_cluster_creator_admin_permissions = true
 
   vpc_id = module.vpc.vpc_id
-  subnet_ids = module.vpc.private_subnets
+  subnet_ids = module.vpc.public_subnets
   control_plane_subnet_ids = module.vpc.private_subnets
 
   eks_managed_node_groups = {
@@ -40,4 +40,18 @@ module "eks" {
     Environment = var.Environment
     Terraform = "true"
   }
+}
+
+
+data "aws_instances" "eks_nodes" {
+  instance_tags = {
+    "eks:cluster-name" = module.eks.cluster_name
+  }
+
+  filter {
+    name = "instance-state-name"
+    values = [ "running" ]
+  }
+
+  depends_on = [ module.eks ]
 }

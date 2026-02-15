@@ -3,7 +3,7 @@ terraform {
     bucket = "tfvishal-easy-shop-state-bucket"
     key = "terraform/terraform.tfstate"
     region = "us-east-1" # Variables not allowed
-    dynamodb_table = "ES-terraform-state-lock"
+    use_lockfile = true
     encrypt = true
   }
 }
